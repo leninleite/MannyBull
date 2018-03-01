@@ -12,8 +12,12 @@
     "fideloper/proxy": "~4.0",
     "jeroennoten/laravel-adminlte": "^1.23",
     "laravel/framework": "5.6.*",
+<<<<<<< HEAD
     "laravel/tinker": "~1.0",
     "laravelcollective/html": "^5.4.0"
+=======
+    "laravel/tinker": "~1.0"
+>>>>>>> 43e787f00cdfa5231b7b59375cb457269d95c7c0
   },
   "require-dev": {
     "filp/whoops": "~2.0",

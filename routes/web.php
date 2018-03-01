@@ -21,7 +21,3 @@ Route::get( '/home', 'HomeController@index' )->name( 'home' );
 
 Route::get( '/keys/register', 'KeysController@register' )->name( 'keys/register' );
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

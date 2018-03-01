@@ -149,6 +149,7 @@ return [
 		JeroenNoten\LaravelAdminLte\ServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 
+
 		/*
 		 * Package Service Providers...
 		 */
@@ -213,6 +214,7 @@ return [
 		'LogActivity'  => App\Helpers\LogActivity::class,
 		'Form' => Collective\Html\FormFacade::class,
       	'Html' => Collective\Html\HtmlFacade::class,
+
 
 	],
 

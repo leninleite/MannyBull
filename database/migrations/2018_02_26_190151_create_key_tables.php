@@ -25,6 +25,7 @@ class CreateKeyTables extends Migration {
 			$table->mediumText( 'key' );
 			$table->mediumText( 'ips' )->nullable();
 			$table->boolean( 'check_login' );
+
 			$table->timestamps();
 		} );
 	}
