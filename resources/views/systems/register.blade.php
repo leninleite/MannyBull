@@ -12,28 +12,37 @@
         <div class="box-header with-border">
             <h3 class="box-title">Register</h3>
         </div>
-        {!! Form::model($keys, ['route' => ['keys/register', $keys->id]]) !!}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {!! Form::model($user, ['route' => ['systems/register', $user->id]]) !!}
         <div class="box-body">
             <div class="form-group has-feedback ">
-                {!! Form::label('user[name]', 'Name') !!}
-                {!! Form::text('user[name]', '', ['class' => 'form-control input-lg']) !!}
+                {!! Form::label('name', 'System Name') !!}
+                {!! Form::text('name', '', ['class' => 'form-control input-lg']) !!}
                 {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-user form-control-feedback']) !!}
             </div>
             <div class="form-group has-feedback ">
-                {!! Form::label('user[email]', 'E-mail') !!}
-                {!! Form::text('user[email]', '', ['class' => 'form-control input-lg ']) !!}
+                {!! Form::label('email', 'E-mail Contact System') !!}
+                {!! Form::text('email', '', ['class' => 'form-control input-lg ']) !!}
                 {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-envelope form-control-feedback']) !!}
 
             </div>
             <div class="form-group has-feedback ">
-                {!! Form::label('user[password]', 'Password') !!}
-                {!! Form::password('user[password]', ['class' => 'form-control input-lg']) !!}
+                {!! Form::label('password', 'Password') !!}
+                {!! Form::password('password', ['class' => 'form-control input-lg']) !!}
                 {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-lock form-control-feedback']) !!}
 
             </div>
             <div class="form-group has-feedback ">
-                {!! Form::label('user[confirm-password]', 'Password') !!}
-                {!! Form::password('user[confirm-password]',  ['class' => 'form-control input-lg']) !!}
+                {!! Form::label('password_confirmation', 'Password') !!}
+                {!! Form::password('password_confirmation',  ['class' => 'form-control input-lg']) !!}
                 {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-log-in form-control-feedback']) !!}
 
             </div>

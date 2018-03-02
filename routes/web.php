@@ -11,13 +11,20 @@
 |
 */
 
-Route::get( '/', function () {
-	return view( 'welcome' );
-} );
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
-Route::get( '/home', 'HomeController@index' )->name( 'home' );
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get( '/keys/register', 'KeysController@register' )->name( 'keys/register' );
+Route::get('/keys/register', 'Keys\RegisterController@index')->name('keys/register');
+
+Route::get('/systems/register', 'Systems\RegisterController@index')->name('systems/register');
+
+Route::post('/systems/register', 'Systems\RegisterController@register')->name('systems/register');
+
+Route::get('/systems/list', 'Systems\ListController@index')->name('systems/list');
+
 
