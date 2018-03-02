@@ -17,10 +17,20 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->boolean('system')->default(0);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // Insert first user
+        DB::table('users')->insert(
+            array(
+                'name' => 'Lenon Leite',
+                'email' => 'lenonleite@gmail.com',
+                'password' => '$2y$10$NIVgsyNuU4sJqMAgGy5zzezMFihcTnBWKg/gvhcOJDbpQkZrSeEEK'
+            )
+        );
     }
 
     /**

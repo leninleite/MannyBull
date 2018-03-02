@@ -14,28 +14,38 @@
         </div>
         {!! Form::model($keys, ['route' => ['keys/register', $keys->id]]) !!}
         <div class="box-body">
-            <div class="form-group has-feedback ">
-                {!! Form::label('user[name]', 'Name') !!}
-                {!! Form::text('user[name]', '', ['class' => 'form-control input-lg']) !!}
-                {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-user form-control-feedback']) !!}
+            <div class="form-group ">
+                {!! Form::label('user_id', 'Users') !!}
+                {!! Form::select('user_id', $users, null, ['class'=>' form-control']); !!}
             </div>
-            <div class="form-group has-feedback ">
-                {!! Form::label('user[email]', 'E-mail') !!}
-                {!! Form::text('user[email]', '', ['class' => 'form-control input-lg ']) !!}
-                {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-envelope form-control-feedback']) !!}
+            <div class="form-group ">
+                {!! Form::label('user_id', 'Type of Keys') !!}
+                {!! Form::select('type_keys', $type_keys,null, ['class'=>' form-control']); !!}
+            </div>
+            <div class="form-group ">
+                <div class="checkbox ">
+                    <label>
+                        {!! Form::checkbox('active',true); !!}
+                        Activated ?
+                    </label>
+                    
+                </div>
+                <div class="checkbox ">
+                    <label>
+                        {!! Form::checkbox('check_login',true); !!}
+                        Check Login ?
+                    </label>
+                    
+                </div>
 
             </div>
-            <div class="form-group has-feedback ">
-                {!! Form::label('user[password]', 'Password') !!}
-                {!! Form::password('user[password]', ['class' => 'form-control input-lg']) !!}
-                {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-lock form-control-feedback']) !!}
-
+            <div class="form-group ">
+                {!! Form::label('ips', 'Opened IPS : ') !!}
+                {{ Form::textarea('ips', null, ['size' => '120x10', 'class'=> 'form-control']) }}
             </div>
-            <div class="form-group has-feedback ">
-                {!! Form::label('user[confirm-password]', 'Password') !!}
-                {!! Form::password('user[confirm-password]',  ['class' => 'form-control input-lg']) !!}
-                {!! Html::tag('span','', ['class'=> 'glyphicon glyphicon-log-in form-control-feedback']) !!}
-
+            <div class="form-group ">
+                {!! Form::label('key', 'Key ') !!}
+                {{ Form::textarea('key', null, ['class'=> 'form-control']) }}
             </div>
         </div>
         <div class="box-footer">

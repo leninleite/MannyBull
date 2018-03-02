@@ -106,7 +106,7 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
     */
-
+    
     'menu' => [
         'MAIN NAVIGATION',
         [
@@ -155,22 +155,38 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Configuration',
+            'text'        => 'CONFIGURATIONS',
             'url'         => 'admin/pages',
             'icon'        => 'file',
             'label_color' => 'success',
         ],
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'text'    => 'USERS',
+            'url'     => 'users/list',
+            'icon'    => 'user',
+            'submenu' => [
+                [
+                    'text' => 'List',
+                    'url'  => 'users/list',
+                    'icon' => 'user',
+                ],
+                [
+                    'text' => 'Register',
+                    'url'  => 'users/register',
+                    'icon' => 'user',
+                ],
+            ]
         ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
-
+        // [
+        //     'text' => 'Profile',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'user',
+        // ],
+        // [
+        //     'text' => 'Change Password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'lock',
+        // ],
     ],
 
     /*

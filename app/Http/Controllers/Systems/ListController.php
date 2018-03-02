@@ -11,8 +11,6 @@ class ListController extends Controller
 
     public function index()
     {
-        $users = new Users();
-
-        return view('systems/list', ['users' => $users::paginate(10)]);
+        return view('systems/list', ['users' => Users::where(['system'=> true])->paginate(10)]);
     }
 }
