@@ -12,6 +12,15 @@
         <div class="box-header with-border">
             <h3 class="box-title">Register</h3>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         {!! Form::model($keys, ['route' => ['keys/register', $keys->id]]) !!}
         <div class="box-body">
             <div class="form-group ">
@@ -19,8 +28,8 @@
                 {!! Form::select('user_id', $users, null, ['class'=>' form-control']); !!}
             </div>
             <div class="form-group ">
-                {!! Form::label('user_id', 'Type of Keys') !!}
-                {!! Form::select('type_keys', $type_keys,null, ['class'=>' form-control']); !!}
+                {!! Form::label('type_id', 'Type of Keys') !!}
+                {!! Form::select('type_id', $type_keys,null, ['class'=>' form-control']); !!}
             </div>
             <div class="form-group ">
                 <div class="checkbox ">
@@ -35,7 +44,6 @@
                         {!! Form::checkbox('check_login',true); !!}
                         Check Login ?
                     </label>
-                    
                 </div>
 
             </div>
